@@ -1,0 +1,13 @@
+node_modules/
+npm-debug.log*
+
+# runtime data — should not be committed
+db/db.json
+
+# env files
+.env
+.env.*
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db

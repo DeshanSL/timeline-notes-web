@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log in — Timeline</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="auth-body">
+  <main class="auth-card">
+    <h1>Welcome back</h1>
+    <p class="auth-sub">Log in to your timeline.</p>
+
+    <form id="login-form" class="auth-form">
+      <label for="username">Username</label>
+      <input id="username" name="username" type="text" autocomplete="username" required />
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required />
+
+      <p class="warning">
+        🔒 Your password also unlocks any notes you've locked. If you forget it,
+        locked notes can never be recovered — not even by us.
+      </p>
+
+      <p id="error" class="error"></p>
+
+      <button type="submit">Log in</button>
+    </form>
+
+    <p class="auth-switch">No account yet? <a href="/signup.html">Sign up</a></p>
+  </main>
+
+  <script src="/js/crypto.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Timeline</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="timeline-body">
+  <header class="top-bar">
+    <h1>Your Timeline</h1>
+    <div class="top-bar-right">
+      <span id="username-display"></span>
+      <button id="logout-btn" class="ghost-btn">Log out</button>
+    </div>
+  </header>
+
+  <main class="timeline-main">
+    <section class="composer">
+      <textarea id="note-text" placeholder="What's on your mind right now?" rows="3"></textarea>
+      <div class="composer-row">
+        <div id="mood-picker" class="mood-picker"></div>
+        <label class="lock-toggle">
+          <input type="checkbox" id="lock-checkbox" />
+          <span>🔒 Lock this note</span>
+        </label>
+        <button id="post-btn">Post</button>
+      </div>
+    </section>
+
+    <section id="timeline" class="timeline"></section>
+  </main>
+
+  <!-- Note detail modal -->
+  <div id="note-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn">&times;</button>
+      <div class="modal-mood" id="modal-mood"></div>
+      <div class="modal-date" id="modal-date"></div>
+      <p class="modal-content" id="modal-content"></p>
+      <button id="modal-delete-btn" class="danger-btn">🗑 Delete note</button>
+    </div>
+  </div>
+
+  <!-- Unlock-on-this-device modal -->
+  <div id="unlock-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <h2>🔒 Unlock your private notes</h2>
+      <p>
+        This browser doesn't have your note-encryption key yet. Enter your
+        password to unlock locked notes on this device.
+      </p>
+      <p class="warning">
+        This password is never sent to the server for this step. If you've
+        forgotten it, locked notes cannot be recovered — ever.
+      </p>
+      <input type="password" id="unlock-password" placeholder="Password" />
+      <p id="unlock-error" class="error"></p>
+      <button id="unlock-btn">Unlock</button>
+      <button id="skip-unlock-btn" class="ghost-btn">Skip for now</button>
+    </div>
+  </div>
+
+  <script src="/js/crypto.js"></script>
+  <script src="/js/timeline.js"></script>
+</body>
+</html>

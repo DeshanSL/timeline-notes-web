@@ -1,0 +1,8 @@
+services:
+  app:
+    build: .
+    ports:
+      - "30001:30001"
+    volumes:
+      - ./db:/app/db
+    restart: unless-stopped
