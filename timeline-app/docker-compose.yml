@@ -2,7 +2,7 @@ services:
   app:
     build: .
     ports:
-      - "30001:30001"
+      - "127.0.0.1:30001:30001"
     volumes:
       - ./db:/app/db
     restart: unless-stopped
